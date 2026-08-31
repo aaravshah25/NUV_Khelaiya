@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Your Digital Pass — NUV Khelaiya 2026 | Navrachana University</title>
+  <meta name="description" content="Secure your digital entry pass for NUV Khelaiya 2026. Choose your pass tier, personalize your holographic pass, and fast-track your event entry.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪩</text></svg>">
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="grain-overlay"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-follower"><span class="cursor-text"></span></div>
+  </div>
+
+  <!-- Floating Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <nav class="nav-inner-pill">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-brand-seal">NK</div>
+          <div class="nav-brand-text">
+            <span class="nav-brand-title">NUV KHELAIYA</span>
+            <span class="nav-brand-sub">CULTURAL COMMITTEE</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="registration.html" class="nav-link active">Registration</a></li>
+          <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#booking-form" class="btn-luxury nav-cta">
+            <span>BOOK PASS</span>
+            <span class="btn-arrow-icon">↓</span>
+          </a>
+          <button class="nav-hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav-overlay">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">01. Home</a></li>
+      <li><a href="about.html">02. About Festival</a></li>
+      <li><a href="registration.html" class="active">03. Digital Pass</a></li>
+      <li><a href="sponsors.html">04. Sponsors</a></li>
+      <li><a href="team.html">05. Committee</a></li>
+      <li><a href="gallery.html">06. Gallery</a></li>
+      <li><a href="contact.html">07. Contact</a></li>
+      <li><a href="verify.html" style="font-size: 1.5rem; color: var(--emerald-bright);">08. Gate Portal 🛡️</a></li>
+    </ul>
+  </div>
+
+  <main style="padding-top: 8rem;">
+    <!-- Registration Hero -->
+    <section class="container" style="padding-top: 2rem; text-align: center;">
+      <div class="eyebrow-pill">OFFICIAL PASS RESERVATION</div>
+      <h1 class="section-title-huge" style="margin: 1.5rem auto; max-width: 900px;">
+        GET YOUR <span class="gold-gradient-text">NUV KHELAIYA</span> DIGITAL PASS.
+      </h1>
+      <p class="section-subtitle-editorial" style="margin: 0 auto 3rem;">
+        Select your access tier, personalize your encrypted NFC/QR digital credential, and enjoy expedited entrance to the most anticipated festival of the year.
+      </p>
+
+      <!-- 4-Step Visual Roadmap -->
+      <div class="pass-roadmap-steps" style="max-width: 1100px; margin: 0 auto 4rem; grid-template-columns: repeat(4, 1fr);">
+        <div class="roadmap-step-item">
+          <span class="step-number">01</span>
+          <h4>REGISTER</h4>
+          <p>Choose your tier and enter your credentials.</p>
+        </div>
+        <div class="roadmap-step-item">
+          <span class="step-number">02</span>
+          <h4>CONFIRM</h4>
+          <p>Instant student & attendee authentication.</p>
+        </div>
+        <div class="roadmap-step-item">
+          <span class="step-number">03</span>
+          <h4>GET PASS</h4>
+          <p>Personalized holographic pass generated.</p>
+        </div>
+        <div class="roadmap-step-item">
+          <span class="step-number">04</span>
+          <h4>ENTER EVENT</h4>
+          <p>Flash your QR at Gate turnstiles for entry.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pass Tiers Selector Grid -->
+    <section class="container" style="padding-bottom: 4rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        
+        <!-- Tier 1: General -->
+        <div class="manifesto-card tier-card" data-tier="GENERAL" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--border-gold-subtle);">
+          <div>
+            <div class="eyebrow-pill" style="font-size: 0.7rem; margin-bottom: 1rem;">STANDARD ACCESS</div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.4rem;">Student General</h3>
+            <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--gold-warm); margin-bottom: 1.5rem;">
+              ₹299 <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-accent);">/ 3 NIGHTS</span>
+            </div>
+            <ul class="timeline-highlights-list" style="margin-bottom: 2rem;">
+              <li>Full 3-Day Entry to Main Garba Arena</li>
+              <li>Participation in Open Competition Circles</li>
+              <li>Encrypted Digital QR Credential</li>
+              <li>Access to Food & Beverage Pavilion</li>
+            </ul>
+          </div>
+          <button class="btn-luxury-outline select-tier-btn" data-tier-name="Student General" data-price="299" style="width: 100%;">SELECT GENERAL TIER</button>
+        </div>
+
+        <!-- Tier 2: VIP (Featured) -->
+        <div class="manifesto-card tier-card active" data-tier="VIP" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--gold-champagne); box-shadow: var(--shadow-luxury), var(--glow-gold); position: relative;">
+          <div style="position: absolute; top: -12px; right: 24px; background: var(--gold-champagne); color: var(--bg-primary); font-family: var(--font-accent); font-size: 0.65rem; font-weight: 800; padding: 3px 12px; border-radius: 9999px; letter-spacing: 0.1em;">MOST POPULAR</div>
+          <div>
+            <div class="eyebrow-pill eyebrow-emerald" style="font-size: 0.7rem; margin-bottom: 1rem;">PREMIUM FAST-TRACK</div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.4rem;">VIP All-Access</h3>
+            <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--emerald-bright); margin-bottom: 1.5rem;">
+              ₹699 <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-accent);">/ 3 NIGHTS</span>
+            </div>
+            <ul class="timeline-highlights-list" style="margin-bottom: 2rem;">
+              <li>Dedicated Fast-Track VIP Gate Lane</li>
+              <li>Exclusive Front-Row Stage Lounge Access</li>
+              <li>Celebrity Meet & Photo-Op Zone</li>
+              <li>Official Commemorative Metal Badge & Pass</li>
+              <li>Complimentary Traditional Welcome Refreshment</li>
+            </ul>
+          </div>
+          <button class="btn-luxury select-tier-btn" data-tier-name="VIP All-Access" data-price="699" style="width: 100%;">SELECT VIP TIER</button>
+        </div>
+
+        <!-- Tier 3: Squad Group -->
+        <div class="manifesto-card tier-card" data-tier="SQUAD" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--border-gold-subtle);">
+          <div>
+            <div class="eyebrow-pill" style="font-size: 0.7rem; margin-bottom: 1rem; color: #f59e0b; border-color: rgba(245,158,11,0.3);">GROUP PASS (5 PAX)</div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.4rem;">Squad Bundle</h3>
+            <div style="font-family: var(--font-display); font-size: 2.5rem; color: #fbbf24; margin-bottom: 1.5rem;">
+              ₹1,199 <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-accent);">/ 5 PASSES</span>
+            </div>
+            <ul class="timeline-highlights-list" style="margin-bottom: 2rem;">
+              <li>Includes 5 Individual 3-Night Passes (Save ₹300)</li>
+              <li>Group Synchrony Entry at All Turnstiles</li>
+              <li>Special Squad Photo-Op Frame Feature</li>
+              <li>Priority Entry for Team Dance Clashes</li>
+            </ul>
+          </div>
+          <button class="btn-luxury-outline select-tier-btn" data-tier-name="Squad Group Pass" data-price="1199" style="width: 100%;">SELECT SQUAD TIER</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Live Interactive Booking & Dynamic Holographic Pass Customizer -->
+    <section class="container" id="booking-form" style="padding: 4rem var(--section-pad-x);">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center;">
+        
+        <!-- Booking Form Box -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 2rem; padding: clamp(2rem, 4vw, 3rem); box-shadow: var(--shadow-luxury);">
+          <div class="eyebrow-pill" style="margin-bottom: 1rem;">STEP 1 OF 2</div>
+          <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem;">PERSONALIZE YOUR PASS</h2>
+
+          <form id="pass-registration-form">
+            <div class="luxury-input-group">
+              <label class="luxury-input-label" for="reg-name">Full Name (Printed on Pass)</label>
+              <input type="text" id="reg-name" class="luxury-input-field" placeholder="e.g. Aarav Patel" required value="Aarav Patel">
+            </div>
+
+            <div class="luxury-input-group">
+              <label class="luxury-input-label" for="reg-email">University / Personal Email</label>
+              <input type="email" id="reg-email" class="luxury-input-field" placeholder="aarav.patel@nuv.ac.in" required value="aarav.p@nuv.ac.in">
+            </div>
+
+            <div class="luxury-input-group">
+              <label class="luxury-input-label" for="reg-roll">Roll No / Student ID / Govt ID</label>
+              <input type="text" id="reg-roll" class="luxury-input-field" placeholder="NUV-2024-CS-0842" required value="NUV-2024-CS-0842">
+            </div>
+
+            <div class="luxury-input-group">
+              <label class="luxury-input-label" for="reg-tier-select">Selected Pass Tier</label>
+              <select id="reg-tier-select" class="luxury-select-field">
+                <option value="VIP All-Access" selected>VIP All-Access Pass (₹699)</option>
+                <option value="Student General">Student General Pass (₹299)</option>
+                <option value="Squad Bundle">Squad Bundle (5 Passes - ₹1,199)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-luxury" style="width: 100%; margin-top: 1rem; padding: 1.1rem;">
+              <span>GENERATE OFFICIAL PASS</span>
+              <span class="btn-arrow-icon">→</span>
+            </button>
+          </form>
+
+          <div id="booking-success-toast" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(62, 201, 167, 0.15); border: 1px solid var(--border-emerald); border-radius: 0.8rem; color: var(--emerald-bright); font-size: 0.9rem; text-align: center;">
+            ✓ Pass generated successfully! Serial ID: <strong id="issued-pass-id">NK-2026-8812</strong>
+          </div>
+        </div>
+
+        <!-- Live Visual Holographic Preview -->
+        <div class="pass-card-3d-stage">
+          <div class="pass-card-3d" id="preview-pass-card">
+            <div class="pass-top-meta">
+              <div class="pass-brand-symbol">NK</div>
+              <div class="pass-tier-badge" id="preview-tier-badge">ALL-ACCESS VIP</div>
+            </div>
+
+            <div class="pass-body-center">
+              <div class="pass-edition-label">OFFICIAL FESTIVAL PASS • 2026</div>
+              <h3 class="pass-title-glow">NUV KHELAIYA</h3>
+              <div class="pass-attendee-details">
+                <div class="pass-detail-col">
+                  <span class="pass-detail-label">ATTENDEE</span>
+                  <span class="pass-detail-val" id="preview-attendee-name">AARAV PATEL</span>
+                </div>
+                <div class="pass-detail-col">
+                  <span class="pass-detail-label">PASS ID</span>
+                  <span class="pass-detail-val" id="preview-pass-id">NK-2026-8812</span>
+                </div>
+                <div class="pass-detail-col">
+                  <span class="pass-detail-label">DATES</span>
+                  <span class="pass-detail-val">12—14 SEPT</span>
+                </div>
+                <div class="pass-detail-col">
+                  <span class="pass-detail-label">VENUE</span>
+                  <span class="pass-detail-val">NUV DOME</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pass-bottom-qr-row">
+              <div class="pass-qr-box">
+                <svg viewBox="0 0 100 100" fill="#08090b" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="10" width="30" height="30" rx="3"/>
+                  <rect x="16" y="16" width="18" height="18" fill="#fff"/>
+                  <rect x="20" y="20" width="10" height="10"/>
+                  <rect x="60" y="10" width="30" height="30" rx="3"/>
+                  <rect x="66" y="16" width="18" height="18" fill="#fff"/>
+                  <rect x="70" y="20" width="10" height="10"/>
+                  <rect x="10" y="60" width="30" height="30" rx="3"/>
+                  <rect x="16" y="66" width="18" height="18" fill="#fff"/>
+                  <rect x="20" y="70" width="10" height="10"/>
+                  <rect x="46" y="12" width="8" height="8"/>
+                  <rect x="46" y="28" width="8" height="12"/>
+                  <rect x="60" y="48" width="12" height="8"/>
+                  <rect x="76" y="60" width="14" height="14"/>
+                  <rect x="48" y="72" width="12" height="16"/>
+                </svg>
+              </div>
+              <div class="pass-security-seal">
+                <div class="pass-chip"></div>
+                <div class="pass-auth-code">SECURE-NFC • VERIFIED</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Smooth FAQ Accordion -->
+    <section class="container" style="padding: 4rem var(--section-pad-x) 8rem; max-width: 950px;">
+      <div class="section-heading-wrapper text-center" style="text-align: center;">
+        <div class="eyebrow-pill eyebrow-emerald">FREQUENTLY ASKED QUESTIONS</div>
+        <h2 class="section-title-huge">EVERYTHING YOU NEED TO KNOW</h2>
+      </div>
+
+      <div class="faq-accordion-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item active">
+          <button class="faq-trigger">
+            <span>What is the NUV Khelaiya Digital Pass?</span>
+            <span class="faq-icon-cross"></span>
+          </button>
+          <div class="faq-content">
+            The Digital Pass is an encrypted, contactless event credential granting you entry to all 3 nights of NUV Khelaiya 2026. Each pass contains a tamper-proof dynamic QR token tied to your student ID and registered profile.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>How do I receive my pass after booking?</span>
+            <span class="faq-icon-cross"></span>
+          </button>
+          <div class="faq-content">
+            Upon submitting your registration, your personalized digital pass is generated instantly on screen and dispatched to your registered email address. You can save it to Apple Wallet, Google Wallet, or retain the screenshot on your mobile device.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>How does the QR verification work at the gate?</span>
+            <span class="faq-icon-cross"></span>
+          </button>
+          <div class="faq-content">
+            Gate turnstiles are equipped with high-speed optical laser scanners. Simply hold your phone screen or pass printout under the scanner beam. The system verifies your ticket in less than 200 milliseconds and unlocks entry.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>What happens if my phone battery dies or the code doesn't scan?</span>
+            <span class="faq-icon-cross"></span>
+          </button>
+          <div class="faq-content">
+            Our Cultural Committee Helpdesks at Gate A, Gate B, and Gate C can manually look up your Pass ID or Student Roll Number on the spot to issue an instantaneous fast-track gate clearance.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Is there an official traditional dress code?</span>
+            <span class="faq-icon-cross"></span>
+          </button>
+          <div class="faq-content">
+            Yes! Traditional Gujarati ethnic wear is strongly encouraged. For gentlemen: Kedias, Kurta-Dhoti, or ethnic vests. For ladies: Chaniya Cholis with authentic mirror/embroidery work or ethnic fusion ghagras.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="nav-brand" style="margin-bottom: 1.2rem;">
+            <div class="nav-brand-seal">NK</div>
+            <div class="nav-brand-text">
+              <span class="nav-brand-title">NUV KHELAIYA</span>
+              <span class="nav-brand-sub">CULTURAL COMMITTEE</span>
+            </div>
+          </div>
+          <p>Official registration portal for NUV Khelaiya 2026. Navrachana University, Ahmedabad.</p>
+        </div>
+        <div class="footer-nav-col">
+          <h4>PAGES</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>GOVERNANCE</h4>
+          <ul class="footer-nav-list">
+            <li><a href="team.html">Team</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="verify.html">Gate Verification 🛡️</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>SUPPORT</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">
+            Pass Helpdesk: pass@nuvkhelaiya.ac.in<br>
+            Hotline: +91 98250 XXXXX
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© 2026 NUV Khelaiya. Cultural Committee of Navrachana University.</div>
+        <div>Crafted with Pure HTML5 • CSS3 • Vanilla JS</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    // Live Pass Form customizer bindings
+    document.addEventListener('DOMContentLoaded', () => {
+      const nameInput = document.getElementById('reg-name');
+      const tierSelect = document.getElementById('reg-tier-select');
+      const previewName = document.getElementById('preview-attendee-name');
+      const previewTier = document.getElementById('preview-tier-badge');
+      const form = document.getElementById('pass-registration-form');
+      const toast = document.getElementById('booking-success-toast');
+
+      if (nameInput && previewName) {
+        nameInput.addEventListener('input', (e) => {
+          previewName.textContent = e.target.value.toUpperCase() || 'ATTENDEE NAME';
+        });
+      }
+
+      if (tierSelect && previewTier) {
+        tierSelect.addEventListener('change', (e) => {
+          previewTier.textContent = e.target.value.toUpperCase();
+        });
+      }
+
+      // Tier Selector Buttons
+      document.querySelectorAll('.select-tier-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const tierName = btn.getAttribute('data-tier-name');
+          if (tierSelect) {
+            for (let option of tierSelect.options) {
+              if (option.text.includes(tierName)) {
+                option.selected = true;
+                if (previewTier) previewTier.textContent = option.value.toUpperCase();
+                break;
+              }
+            }
+          }
+          document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // Form submission
+      if (form && toast) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const randomSuffix = Math.floor(1000 + Math.random() * 9000);
+          const generatedId = `NK-2026-${randomSuffix}`;
+          document.getElementById('issued-pass-id').textContent = generatedId;
+          document.getElementById('preview-pass-id').textContent = generatedId;
+          toast.style.display = 'block';
+          SoundFX.playClick();
+        });
+      }
+
+      // FAQ Accordion Toggle Logic
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach((item) => {
+        const trigger = item.querySelector('.faq-trigger');
+        trigger.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(i => i.classList.remove('active'));
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

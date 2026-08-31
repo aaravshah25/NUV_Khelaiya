@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival Gallery Archive — NUV Khelaiya | Navrachana University</title>
+  <meta name="description" content="Explore high-definition visual memories from NUV Khelaiya. Filter by Garba circles, celebrity performances, student squads, and behind-the-scenes moments.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪩</text></svg>">
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .gallery-filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 3.5rem;
+    }
+    .gallery-filter-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: 9999px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold-subtle);
+      color: var(--text-secondary);
+      font-family: var(--font-accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .gallery-filter-btn:hover,
+    .gallery-filter-btn.active {
+      border-color: var(--gold-champagne);
+      background: var(--gold-champagne);
+      color: var(--bg-primary);
+      box-shadow: var(--glow-gold);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain-overlay"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-follower"><span class="cursor-text"></span></div>
+  </div>
+
+  <!-- Floating Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <nav class="nav-inner-pill">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-brand-seal">NK</div>
+          <div class="nav-brand-text">
+            <span class="nav-brand-title">NUV KHELAIYA</span>
+            <span class="nav-brand-sub">CULTURAL COMMITTEE</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="registration.html" class="nav-link">Registration</a></li>
+          <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="registration.html" class="btn-luxury nav-cta">
+            <span>GET PASS</span>
+            <span class="btn-arrow-icon">→</span>
+          </a>
+          <button class="nav-hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav-overlay">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">01. Home</a></li>
+      <li><a href="about.html">02. About Festival</a></li>
+      <li><a href="registration.html">03. Digital Pass</a></li>
+      <li><a href="sponsors.html">04. Sponsors</a></li>
+      <li><a href="team.html">05. Committee</a></li>
+      <li><a href="gallery.html" class="active">06. Gallery</a></li>
+      <li><a href="contact.html">07. Contact</a></li>
+      <li><a href="verify.html" style="font-size: 1.5rem; color: var(--emerald-bright);">08. Gate Portal 🛡️</a></li>
+    </ul>
+  </div>
+
+  <main style="padding-top: 8rem;">
+    <!-- Gallery Hero -->
+    <section class="container" style="padding-top: 2rem; text-align: center;">
+      <div class="eyebrow-pill">HIGH DEFINITION CHRONICLES</div>
+      <h1 class="section-title-huge" style="margin: 1.5rem auto; max-width: 900px;">
+        THE VISUAL <span class="gold-gradient-text">ARCHIVE.</span>
+      </h1>
+      <p class="section-subtitle-editorial" style="margin: 0 auto 3rem;">
+        Click any photograph to launch the cinematic full-screen view. Filter across festival moments, stage headliners, and the sacred concentric circles.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="gallery-filter-bar">
+        <button class="gallery-filter-btn active" data-filter="all">ALL PHOTOS</button>
+        <button class="gallery-filter-btn" data-filter="garba">GARBA CIRCLES</button>
+        <button class="gallery-filter-btn" data-filter="performances">PERFORMANCES</button>
+        <button class="gallery-filter-btn" data-filter="events">AARTI & CEREMONIES</button>
+        <button class="gallery-filter-btn" data-filter="bts">BEHIND THE SCENES</button>
+        <button class="gallery-filter-btn" data-filter="people">PEOPLE & SQUADS</button>
+      </div>
+    </section>
+
+    <!-- Masonry Grid with Data Categories -->
+    <section class="container" style="padding-bottom: 8rem;">
+      <div class="gallery-masonry-grid">
+        
+        <!-- Photo 1: Garba Circle (Tall) -->
+        <div class="gallery-item span-tall" data-category="garba" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop" alt="Concentric Garba Whirlwind">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">GARBA CIRCLES</span>
+            <h4 class="gallery-item-caption">5,000+ Unified Dancers in Concentric Motion</h4>
+          </div>
+        </div>
+
+        <!-- Photo 2: Fireworks (Wide) -->
+        <div class="gallery-item span-wide" data-category="events" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop" alt="Midnight Fireworks over Campus">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">AARTI & CEREMONIES</span>
+            <h4 class="gallery-item-caption">Midnight Countdown Under Fireworks Canopy</h4>
+          </div>
+        </div>
+
+        <!-- Photo 3: Traditional Attire (Standard) -->
+        <div class="gallery-item standard" data-category="people" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" alt="Traditional Kedia Attire">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">PEOPLE & SQUADS</span>
+            <h4 class="gallery-item-caption">Royal Mirror-Work & Handcrafted Kedia</h4>
+          </div>
+        </div>
+
+        <!-- Photo 4: Live Music (Standard) -->
+        <div class="gallery-item standard" data-category="performances" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop" alt="Live Dhol Acoustic Set">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">PERFORMANCES</span>
+            <h4 class="gallery-item-caption">Live Dhol Rhythm Masterclass</h4>
+          </div>
+        </div>
+
+        <!-- Photo 5: Celebrity Stage (Wide) -->
+        <div class="gallery-item span-wide" data-category="performances" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Main Stage Headliner">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">PERFORMANCES</span>
+            <h4 class="gallery-item-caption">Guest Classical Master Headline Symphony</h4>
+          </div>
+        </div>
+
+        <!-- Photo 6: High Speed Raas (Standard) -->
+        <div class="gallery-item standard" data-category="garba" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=800&auto=format&fit=crop" alt="High Energy Raas Spin">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">GARBA CIRCLES</span>
+            <h4 class="gallery-item-caption">Precision Footwork & High-Octane Raas</h4>
+          </div>
+        </div>
+
+        <!-- Photo 7: Behind the Scenes (Tall) -->
+        <div class="gallery-item span-tall" data-category="bts" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Lighting Rig Crew & Sound Check">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">BEHIND THE SCENES</span>
+            <h4 class="gallery-item-caption">Sound Engineering & Acoustic Tuning Rig</h4>
+          </div>
+        </div>
+
+        <!-- Photo 8: Student Squads (Standard) -->
+        <div class="gallery-item standard" data-category="people" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" alt="Student Squad Celebration">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">PEOPLE & SQUADS</span>
+            <h4 class="gallery-item-caption">Batch of 2026 Student Delegations</h4>
+          </div>
+        </div>
+
+        <!-- Photo 9: Grand Aarti (Wide) -->
+        <div class="gallery-item span-wide" data-category="events" data-cursor="view">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1200&auto=format&fit=crop" alt="Maha Aarti with 1,000 Diyas">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-tag">AARTI & CEREMONIES</span>
+            <h4 class="gallery-item-caption">Sacred Maha Aarti with Illuminated Diyas</h4>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div class="lightbox-modal">
+    <button class="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+    <button class="lightbox-nav-prev" aria-label="Previous Image">‹</button>
+    <button class="lightbox-nav-next" aria-label="Next Image">›</button>
+    <div class="lightbox-content-box">
+      <img class="lightbox-image" src="" alt="Enlarged View">
+      <div class="lightbox-caption-text"></div>
+    </div>
+  </div>
+
+  <!-- Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="nav-brand" style="margin-bottom: 1.2rem;">
+            <div class="nav-brand-seal">NK</div>
+            <div class="nav-brand-text">
+              <span class="nav-brand-title">NUV KHELAIYA</span>
+              <span class="nav-brand-sub">CULTURAL COMMITTEE</span>
+            </div>
+          </div>
+          <p>The visual memories and archival chronicles of NUV Khelaiya.</p>
+        </div>
+        <div class="footer-nav-col">
+          <h4>PAGES</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="registration.html">Digital Pass</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>GOVERNANCE</h4>
+          <ul class="footer-nav-list">
+            <li><a href="team.html">Team</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="verify.html">Gate Verification 🛡️</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>PRESS MEDIA</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">
+            High-Res Press Media Kit: media@nuvkhelaiya.ac.in
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© 2026 NUV Khelaiya. Cultural Committee of Navrachana University.</div>
+        <div>Crafted with Pure HTML5 • CSS3 • Vanilla JS</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

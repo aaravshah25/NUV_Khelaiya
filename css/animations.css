@@ -1,0 +1,375 @@
+/* ==========================================================================
+   NUV KHELAIYA — LUXURY ANIMATIONS & MOTION SYSTEM
+   ========================================================================== */
+
+/* --- Shimmer & Foil Reflections --- */
+@keyframes goldShimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.anim-gold-shimmer {
+    background: linear-gradient(90deg,
+            var(--gold-antique) 0%,
+            var(--gold-warm) 50%,
+            var(--gold-antique) 100%);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: none;
+    -webkit-background-clip: text;
+    animation: goldShimmer 4s linear infinite;
+}
+
+/* --- Floating Ambient Orbs --- */
+@keyframes floatOrb1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -30px) scale(1.08);
+    }
+}
+
+@keyframes floatOrb2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-30px, 40px) scale(0.95);
+    }
+}
+
+.ambient-glow-1 {
+    animation: floatOrb1 18s ease-in-out infinite;
+}
+
+.ambient-glow-2 {
+    animation: floatOrb2 22s ease-in-out infinite;
+}
+
+/* --- Laser Scan Beam (For Operational Viewport & QR Simulator) --- */
+@keyframes laserScanSweep {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.laser-scanner-beam {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #3ec9a7, #ffffff, #3ec9a7, transparent);
+    box-shadow: 0 0 15px #3ec9a7, 0 0 30px rgba(62, 201, 167, 0.6);
+    z-index: 10;
+    pointer-events: none;
+    animation: laserScanSweep 2.4s ease-in-out infinite;
+}
+
+/* --- Pulse Rings --- */
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(223, 203, 159, 0.4);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(223, 203, 159, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(223, 203, 159, 0);
+    }
+}
+
+.pulse-node {
+    animation: pulseRing 2.5s infinite;
+}
+
+/* --- Holographic Card Sheen --- */
+@keyframes holoSheen {
+    0% {
+        transform: translateY(-100%) rotate(25deg);
+    }
+
+    100% {
+        transform: translateY(200%) rotate(25deg);
+    }
+}
+
+.pass-card-3d:hover::before {
+    animation: holoSheen 3s ease infinite;
+}
+
+/* --- Accordion Smooth Expand --- */
+.faq-item {
+    border: 1px solid var(--border-gold-subtle);
+    border-radius: 1.25rem;
+    background: var(--bg-card);
+    overflow: hidden;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    margin-bottom: 1.2rem;
+}
+
+.faq-item.active {
+    border-color: var(--gold-champagne);
+    background: var(--bg-card-hover);
+}
+
+.faq-trigger {
+    width: 100%;
+    padding: 1.6rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-primary);
+    font-family: var(--font-accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.faq-item.active .faq-trigger {
+    color: var(--gold-warm);
+}
+
+.faq-icon-cross {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.4s var(--ease-smooth);
+}
+
+.faq-icon-cross::before,
+.faq-icon-cross::after {
+    content: '';
+    position: absolute;
+    background: var(--gold-champagne);
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon-cross::before {
+    top: 8px;
+    left: 0;
+    width: 18px;
+    height: 2px;
+}
+
+.faq-icon-cross::after {
+    top: 0;
+    left: 8px;
+    width: 2px;
+    height: 18px;
+}
+
+.faq-item.active .faq-icon-cross {
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s var(--ease-smooth), padding 0.3s ease;
+    padding: 0 2rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-content {
+    max-height: 250px;
+    padding-bottom: 1.8rem;
+}
+
+/* --- Form Elements Luxury Styling --- */
+.luxury-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.luxury-input-label {
+    font-family: var(--font-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold-champagne);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.luxury-input-field,
+.luxury-select-field,
+.luxury-textarea-field {
+    width: 100%;
+    padding: 1rem 1.4rem;
+    background: rgba(14, 17, 22, 0.8);
+    border: 1px solid var(--border-gold-subtle);
+    border-radius: 0.9rem;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.luxury-input-field:focus,
+.luxury-select-field:focus,
+.luxury-textarea-field:focus {
+    border-color: var(--gold-champagne);
+    box-shadow: 0 0 15px rgba(223, 203, 159, 0.25);
+    background: rgba(20, 24, 30, 0.95);
+}
+
+.luxury-select-field option {
+    background-color: var(--bg-charcoal);
+    color: var(--text-primary);
+}
+
+/* --- Stat Counter Card --- */
+.stat-counter-card {
+    padding: 2.5rem 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold-subtle);
+    border-radius: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-counter-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-gold);
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--gold-warm);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-family: var(--font-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* --- Live Scan Feed Box (verify.html) --- */
+.camera-viewfinder-box {
+    width: 100%;
+    max-width: 460px;
+    height: 320px;
+    background: #000000;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--border-gold);
+    margin: 0 auto 2rem;
+    box-shadow: var(--shadow-luxury);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewfinder-corner {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-color: var(--emerald-bright);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.viewfinder-corner.top-left {
+    top: 20px;
+    left: 20px;
+    border-width: 3px 0 0 3px;
+}
+
+.viewfinder-corner.top-right {
+    top: 20px;
+    right: 20px;
+    border-width: 3px 3px 0 0;
+}
+
+.viewfinder-corner.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    border-width: 0 0 3px 3px;
+}
+
+.viewfinder-corner.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    border-width: 0 3px 3px 0;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .custom-cursor,
+    .cursor-dot,
+    .cursor-follower {
+        display: none !important;
+    }
+
+    .pass-card-3d {
+        transform: none !important;
+    }
+
+    .ambient-glow-1,
+    .ambient-glow-2 {
+        animation: none !important;
+    }
+}

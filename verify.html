@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatekeeper Pass Verification Portal — NUV Khelaiya 2026</title>
+  <meta name="description" content="Operational gatekeeper check-in portal for security personnel and cultural committee volunteers at NUV Khelaiya.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    body {
+      background-color: #060708;
+      color: #fcfbf7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .operational-header {
+      background: rgba(14, 17, 22, 0.95);
+      border-bottom: 1px solid var(--border-gold-subtle);
+      padding: 1.2rem var(--section-pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .offline-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      background: rgba(62, 201, 167, 0.1);
+      border: 1px solid var(--border-emerald);
+      color: var(--emerald-bright);
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .offline-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-bright);
+      box-shadow: 0 0 8px var(--emerald-bright);
+      animation: blinkLive 1.5s infinite;
+    }
+    .stats-bar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-mini-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold-subtle);
+      border-radius: 1rem;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .stat-mini-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold-warm);
+    }
+    .stat-mini-label {
+      font-family: var(--font-accent);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Operational Header Bar -->
+  <header class="operational-header">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.8rem;">
+        <div class="nav-brand-seal" style="width: 32px; height: 32px; font-size: 0.75rem;">NK</div>
+        <div>
+          <h1 style="font-family: var(--font-display); font-size: 1.1rem; line-height: 1;">NUV KHELAIYA</h1>
+          <span style="font-family: var(--font-accent); font-size: 0.6rem; color: var(--gold-champagne); letter-spacing: 0.15em; text-transform: uppercase;">PASS VERIFICATION SYSTEM</span>
+        </div>
+      </a>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+      <div class="offline-status-badge">
+        <span class="offline-dot"></span>
+        <span id="cached-count-badge">14 CHECK-INS CACHED</span>
+      </div>
+
+      <button id="btn-sync-cloud" class="btn-luxury-outline" style="padding: 0.4rem 1.2rem; font-size: 0.75rem;">
+        SYNC DATA
+      </button>
+
+      <a href="index.html" class="btn-luxury-outline" style="padding: 0.4rem 1.2rem; font-size: 0.75rem; border-color: rgba(255,255,255,0.15); color: var(--text-secondary);">
+        EXIT TO SITE ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- Sync Toast Notification -->
+  <div id="sync-toast" style="position: fixed; top: 80px; right: 20px; background: var(--emerald-bright); color: var(--emerald-deep); padding: 0.8rem 1.5rem; border-radius: 9999px; font-family: var(--font-accent); font-weight: 700; font-size: 0.85rem; box-shadow: var(--glow-emerald); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+    ✓ ALL GATE DATA SYNCED WITH CENTRAL DATABASE
+  </div>
+
+  <!-- Operational Body -->
+  <main style="flex: 1; padding: 2.5rem var(--section-pad-x) 4rem; max-width: 900px; margin: 0 auto; width: 100%;">
+    
+    <!-- Real-time Turnstile Stats -->
+    <div class="stats-bar-grid">
+      <div class="stat-mini-card">
+        <div class="stat-mini-num" id="stat-total-passes">8</div>
+        <div class="stat-mini-label">TOTAL PASSES</div>
+      </div>
+      <div class="stat-mini-card">
+        <div class="stat-mini-num" id="stat-checked-in" style="color: var(--emerald-bright);">1</div>
+        <div class="stat-mini-label">CHECKED IN</div>
+      </div>
+      <div class="stat-mini-card">
+        <div class="stat-mini-num" id="stat-remaining" style="color: var(--gold-champagne);">7</div>
+        <div class="stat-mini-label">REMAINING</div>
+      </div>
+    </div>
+
+    <!-- Simulated Optical Camera Scanner Viewport -->
+    <div class="camera-viewfinder-box">
+      <!-- Active Laser Scanner Beam -->
+      <div class="laser-scanner-beam"></div>
+
+      <!-- 4 Corner Brackets -->
+      <div class="viewfinder-corner top-left"></div>
+      <div class="viewfinder-corner top-right"></div>
+      <div class="viewfinder-corner bottom-left"></div>
+      <div class="viewfinder-corner bottom-right"></div>
+
+      <!-- Center Targeting Grid -->
+      <div style="position: relative; z-index: 4; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0.7;">📷</div>
+        <p style="font-family: var(--font-accent); font-size: 0.8rem; letter-spacing: 0.15em; color: var(--gold-champagne); text-transform: uppercase;">
+          OPTICAL SCANNER READY
+        </p>
+        <span style="font-size: 0.7rem; color: var(--text-muted);">ALIGN PASS QR CODE WITHIN BRACKETS</span>
+      </div>
+    </div>
+
+    <!-- Scanner Action Controls -->
+    <div style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center; flex-wrap: wrap;">
+      <button id="btn-simulate-camera-scan" class="btn-luxury" style="padding: 0.9rem 2rem; font-size: 0.85rem;">
+        <span>[ SCAN RANDOM QR CODE ]</span>
+      </button>
+    </div>
+
+    <!-- Manual Pass ID Search -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-gold-subtle); border-radius: 1.25rem; padding: 1.5rem; margin-bottom: 2rem;">
+      <label class="luxury-input-label" style="margin-bottom: 0.6rem; display: block;">MANUAL PASS ID LOOKUP</label>
+      <div style="display: flex; gap: 0.8rem;">
+        <input type="text" id="manual-pass-input" class="luxury-input-field" placeholder="Enter Pass ID (e.g. NK-2026-8812, NK-2026-4401)" style="text-transform: uppercase;">
+        <button id="btn-manual-verify" class="btn-luxury-outline" style="white-space: nowrap; padding: 0 1.8rem;">VERIFY</button>
+      </div>
+      <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem; display: block;">
+        Try sample IDs: <code>NK-2026-8812</code> (Valid), <code>NK-2026-1044</code> (Duplicate), <code>NK-2026-9032</code> (Valid)
+      </span>
+    </div>
+
+    <!-- Dynamic Result Verification Card Display -->
+    <div id="operational-result-card" style="display: none; margin-bottom: 2.5rem;"></div>
+
+    <!-- Operational Instructions & Gate Log Note -->
+    <div style="background: rgba(18, 22, 27, 0.5); border: 1px dashed var(--border-gold-subtle); border-radius: 1rem; padding: 1.2rem; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+      <strong style="color: var(--gold-champagne);">OPERATIONAL GUIDELINES:</strong><br>
+      1. Every valid scan produces an audible major chord confirmation chime.<br>
+      2. If an attendee has already passed turnstiles, a duplicate amber warning is sounded with previous entry timestamp.<br>
+      3. For manual override or pass issues, direct attendee to the Cultural Committee Control Desk at Gate A.
+    </div>
+
+  </main>
+
+  <!-- External & Application Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/verification.js"></script>
+</body>
+</html>
