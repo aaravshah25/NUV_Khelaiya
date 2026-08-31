@@ -117,16 +117,42 @@
       </div>
     </section>
 
+    <!-- Pass Process Flow -->
+    <section class="container" style="padding-bottom: 3rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+        <div class="manifesto-card" style="padding: 1.8rem;">
+          <span class="manifesto-number">01</span>
+          <h4 style="font-family: var(--font-accent); text-transform: uppercase; margin-bottom: 0.4rem;">Select Tier</h4>
+          <p>Choose General, VIP All-Access, or Squad Bundle passes.</p>
+        </div>
+        <div class="manifesto-card" style="padding: 1.8rem;">
+          <span class="manifesto-number">02</span>
+          <h4 style="font-family: var(--font-accent); text-transform: uppercase; margin-bottom: 0.4rem;">Personalize Pass</h4>
+          <p>Input student name & university credentials.</p>
+        </div>
+        <div class="manifesto-card" style="padding: 1.8rem;">
+          <span class="manifesto-number">03</span>
+          <h4 style="font-family: var(--font-accent); text-transform: uppercase; margin-bottom: 0.4rem;">Generate 3D Pass</h4>
+          <p>Instant cryptographic QR badge customized live.</p>
+        </div>
+        <div class="manifesto-card" style="padding: 1.8rem;">
+          <span class="manifesto-number">04</span>
+          <h4 style="font-family: var(--font-accent); text-transform: uppercase; margin-bottom: 0.4rem;">Fast-Track Check-In</h4>
+          <p>Flash your QR at Gate turnstiles for instant entry.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Pass Tiers Selector Grid -->
     <section class="container" style="padding-bottom: 4rem;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
         
-        <!-- Tier 1: General -->
-        <div class="manifesto-card tier-card" data-tier="GENERAL" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--border-gold-subtle);">
+        <!-- Tier 1: General (Deep Teal Jewel Tier) -->
+        <div class="manifesto-card tier-card" data-tier="GENERAL" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--border-teal); background: var(--bg-teal-card);">
           <div>
-            <div class="eyebrow-pill" style="font-size: 0.7rem; margin-bottom: 1rem;">STANDARD ACCESS</div>
+            <div class="eyebrow-pill eyebrow-teal" style="font-size: 0.7rem; margin-bottom: 1rem;">STANDARD ACCESS</div>
             <h3 style="font-size: 1.8rem; margin-bottom: 0.4rem;">Student General</h3>
-            <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--gold-warm); margin-bottom: 1.5rem;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--teal-bright); margin-bottom: 1.5rem;">
               ₹299 <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-accent);">/ 3 NIGHTS</span>
             </div>
             <ul class="timeline-highlights-list" style="margin-bottom: 2rem;">
@@ -136,16 +162,16 @@
               <li>Access to Food & Beverage Pavilion</li>
             </ul>
           </div>
-          <button class="btn-luxury-outline select-tier-btn" data-tier-name="Student General" data-price="299" style="width: 100%;">SELECT GENERAL TIER</button>
+          <button class="btn-luxury-outline select-tier-btn" data-tier-name="Student General" data-price="299" style="width: 100%; border-color: var(--border-teal); color: var(--teal-bright);">SELECT GENERAL TIER</button>
         </div>
 
-        <!-- Tier 2: VIP (Featured) -->
-        <div class="manifesto-card tier-card active" data-tier="VIP" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--gold-champagne); box-shadow: var(--shadow-luxury), var(--glow-gold); position: relative;">
-          <div style="position: absolute; top: -12px; right: 24px; background: var(--gold-champagne); color: var(--bg-primary); font-family: var(--font-accent); font-size: 0.65rem; font-weight: 800; padding: 3px 12px; border-radius: 9999px; letter-spacing: 0.1em;">MOST POPULAR</div>
+        <!-- Tier 2: VIP (Warm Yellow Radiant Tier - Featured) -->
+        <div class="manifesto-card tier-card active" data-tier="VIP" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--yellow-warm); box-shadow: var(--shadow-luxury), var(--glow-yellow); position: relative; background: var(--bg-card);">
+          <div style="position: absolute; top: -12px; right: 24px; background: var(--yellow-warm); color: #0b0709; font-family: var(--font-accent); font-size: 0.65rem; font-weight: 800; padding: 3px 12px; border-radius: 9999px; letter-spacing: 0.1em;">MOST POPULAR</div>
           <div>
-            <div class="eyebrow-pill eyebrow-emerald" style="font-size: 0.7rem; margin-bottom: 1rem;">PREMIUM FAST-TRACK</div>
+            <div class="eyebrow-pill" style="font-size: 0.7rem; margin-bottom: 1rem;">PREMIUM FAST-TRACK</div>
             <h3 style="font-size: 1.8rem; margin-bottom: 0.4rem;">VIP All-Access</h3>
-            <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--emerald-bright); margin-bottom: 1.5rem;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--yellow-warm); margin-bottom: 1.5rem;">
               ₹699 <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-accent);">/ 3 NIGHTS</span>
             </div>
             <ul class="timeline-highlights-list" style="margin-bottom: 2rem;">
@@ -159,12 +185,12 @@
           <button class="btn-luxury select-tier-btn" data-tier-name="VIP All-Access" data-price="699" style="width: 100%;">SELECT VIP TIER</button>
         </div>
 
-        <!-- Tier 3: Squad Group -->
-        <div class="manifesto-card tier-card" data-tier="SQUAD" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--border-gold-subtle);">
+        <!-- Tier 3: Squad Group (Deep Plum Royal Tier) -->
+        <div class="manifesto-card tier-card" data-tier="SQUAD" style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--border-plum); background: var(--bg-plum-card);">
           <div>
-            <div class="eyebrow-pill" style="font-size: 0.7rem; margin-bottom: 1rem; color: #f59e0b; border-color: rgba(245,158,11,0.3);">GROUP PASS (5 PAX)</div>
+            <div class="eyebrow-pill eyebrow-plum" style="font-size: 0.7rem; margin-bottom: 1rem;">GROUP PASS (5 PAX)</div>
             <h3 style="font-size: 1.8rem; margin-bottom: 0.4rem;">Squad Bundle</h3>
-            <div style="font-family: var(--font-display); font-size: 2.5rem; color: #fbbf24; margin-bottom: 1.5rem;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--plum-light); margin-bottom: 1.5rem;">
               ₹1,199 <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-accent);">/ 5 PASSES</span>
             </div>
             <ul class="timeline-highlights-list" style="margin-bottom: 2rem;">
@@ -174,7 +200,7 @@
               <li>Priority Entry for Team Dance Clashes</li>
             </ul>
           </div>
-          <button class="btn-luxury-outline select-tier-btn" data-tier-name="Squad Group Pass" data-price="1199" style="width: 100%;">SELECT SQUAD TIER</button>
+          <button class="btn-luxury-plum select-tier-btn" data-tier-name="Squad Group Pass" data-price="1199" style="width: 100%;">SELECT SQUAD TIER</button>
         </div>
 
       </div>

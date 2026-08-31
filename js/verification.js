@@ -211,9 +211,9 @@ function initLandingPageSimulator() {
 
     if (result.status === 'VALID') {
       displayScreen.innerHTML = `
-        <div style="color: var(--emerald-bright); font-size: 2.2rem; font-family: var(--font-royal); margin-bottom: 0.4rem;">✓ PASS VERIFIED</div>
-        <div style="font-family: var(--font-accent); font-size: 0.9rem; letter-spacing: 0.15em; color: var(--gold-champagne); text-transform: uppercase; margin-bottom: 1.2rem;">ENTRY GRANTED</div>
-        <div style="display: flex; gap: 2rem; justify-content: center; font-size: 0.9rem; text-align: left; background: rgba(0,0,0,0.4); padding: 1rem 1.8rem; border-radius: 1rem; border: 1px solid var(--border-emerald);">
+        <div style="color: var(--teal-bright); font-size: 2.2rem; font-family: var(--font-royal); margin-bottom: 0.4rem;">✓ PASS VERIFIED</div>
+        <div style="font-family: var(--font-accent); font-size: 0.9rem; letter-spacing: 0.15em; color: var(--yellow-warm); text-transform: uppercase; margin-bottom: 1.2rem;">ENTRY GRANTED</div>
+        <div style="display: flex; gap: 2rem; justify-content: center; font-size: 0.9rem; text-align: left; background: rgba(0,0,0,0.4); padding: 1rem 1.8rem; border-radius: 1rem; border: 1px solid var(--border-teal);">
           <div>
             <span style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">ATTENDEE</span>
             <strong>${result.pass.name}</strong>
@@ -224,23 +224,23 @@ function initLandingPageSimulator() {
           </div>
           <div>
             <span style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">TIME</span>
-            <strong style="color: var(--emerald-bright);">${result.time}</strong>
+            <strong style="color: var(--teal-bright);">${result.time}</strong>
           </div>
         </div>
       `;
     } else if (result.status === 'DUPLICATE') {
       displayScreen.innerHTML = `
-        <div style="color: #f59e0b; font-size: 2.2rem; font-family: var(--font-royal); margin-bottom: 0.4rem;">⚠ ALREADY CHECKED IN</div>
-        <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; color: #fbbf24; text-transform: uppercase; margin-bottom: 1.2rem;">DUPLICATE SCAN DETECTED</div>
-        <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.4); padding: 1rem 1.5rem; border-radius: 1rem; color: #fde68a; font-size: 0.9rem;">
+        <div style="color: var(--yellow-warm); font-size: 2.2rem; font-family: var(--font-royal); margin-bottom: 0.4rem;">⚠ ALREADY CHECKED IN</div>
+        <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--yellow-light); text-transform: uppercase; margin-bottom: 1.2rem;">DUPLICATE SCAN DETECTED</div>
+        <div style="background: rgba(254, 191, 74, 0.1); border: 1px solid rgba(254, 191, 74, 0.35); padding: 1rem 1.5rem; border-radius: 1rem; color: var(--yellow-cream); font-size: 0.9rem;">
           ${result.message}
         </div>
       `;
     } else {
       displayScreen.innerHTML = `
-        <div style="color: #ef4444; font-size: 2.2rem; font-family: var(--font-royal); margin-bottom: 0.4rem;">✕ INVALID PASS</div>
-        <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; color: #f87171; text-transform: uppercase; margin-bottom: 1.2rem;">ACCESS DENIED</div>
-        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.4); padding: 1rem 1.5rem; border-radius: 1rem; color: #fca5a5; font-size: 0.9rem;">
+        <div style="color: var(--plum-bright); font-size: 2.2rem; font-family: var(--font-royal); margin-bottom: 0.4rem;">✕ INVALID PASS</div>
+        <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--plum-light); text-transform: uppercase; margin-bottom: 1.2rem;">ACCESS DENIED</div>
+        <div style="background: rgba(95, 16, 64, 0.2); border: 1px solid rgba(189, 43, 133, 0.4); padding: 1rem 1.5rem; border-radius: 1rem; color: #f7b7dd; font-size: 0.9rem;">
           ${result.message}
         </div>
       `;
@@ -296,18 +296,18 @@ function initOperationalVerifyPage() {
       resultContainer.style.display = 'block';
       if (result.status === 'VALID') {
         resultContainer.innerHTML = `
-          <div style="background: rgba(18, 22, 27, 0.95); border: 2px solid var(--emerald-bright); border-radius: 1.5rem; padding: 2rem; text-align: center; box-shadow: var(--glow-emerald);">
-            <div style="color: var(--emerald-bright); font-size: 2rem; font-family: var(--font-royal); margin-bottom: 0.3rem;">✓ PASS VERIFIED</div>
-            <div style="font-family: var(--font-accent); color: var(--gold-champagne); letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem;">ENTRY GRANTED</div>
-            <div style="text-align: left; background: rgba(0,0,0,0.5); padding: 1.2rem; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--border-emerald);">
+          <div style="background: rgba(23, 14, 22, 0.95); border: 2px solid var(--teal-bright); border-radius: 1.5rem; padding: 2rem; text-align: center; box-shadow: var(--glow-teal);">
+            <div style="color: var(--teal-bright); font-size: 2rem; font-family: var(--font-royal); margin-bottom: 0.3rem;">✓ PASS VERIFIED</div>
+            <div style="font-family: var(--font-accent); color: var(--yellow-warm); letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem;">ENTRY GRANTED</div>
+            <div style="text-align: left; background: rgba(0,0,0,0.5); padding: 1.2rem; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--border-teal);">
               <p style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">NAME</p>
               <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.8rem;">${result.pass.name}</h3>
               <p style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">PASS ID</p>
-              <p style="font-family: var(--font-accent); font-size: 1.1rem; color: var(--gold-warm); font-weight: 700; margin-bottom: 0.8rem;">${result.pass.id}</p>
+              <p style="font-family: var(--font-accent); font-size: 1.1rem; color: var(--yellow-warm); font-weight: 700; margin-bottom: 0.8rem;">${result.pass.id}</p>
               <p style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">CATEGORY</p>
-              <p style="color: var(--emerald-bright); font-weight: 600;">${result.pass.category}</p>
+              <p style="color: var(--teal-bright); font-weight: 600;">${result.pass.category}</p>
             </div>
-            <button id="btn-confirm-checkin" class="btn-luxury btn-luxury-emerald" style="width: 100%;">CONFIRM GATE CHECK-IN</button>
+            <button id="btn-confirm-checkin" class="btn-luxury btn-luxury-teal" style="width: 100%;">CONFIRM GATE CHECK-IN</button>
           </div>
         `;
 
@@ -315,8 +315,8 @@ function initOperationalVerifyPage() {
           window.verificationEngine.checkInPass(result.pass.id);
           updateDashboard();
           resultContainer.innerHTML = `
-            <div style="background: rgba(18, 22, 27, 0.95); border: 1px solid var(--border-gold); border-radius: 1.5rem; padding: 2rem; text-align: center;">
-              <h3 style="color: var(--gold-warm); font-family: var(--font-display); margin-bottom: 0.5rem;">CHECK-IN COMPLETED</h3>
+            <div style="background: rgba(23, 14, 22, 0.95); border: 1px solid var(--border-gold); border-radius: 1.5rem; padding: 2rem; text-align: center;">
+              <h3 style="color: var(--yellow-warm); font-family: var(--font-display); margin-bottom: 0.5rem;">CHECK-IN COMPLETED</h3>
               <p style="color: var(--text-secondary); font-size: 0.9rem;">Gate Pass ${result.pass.id} marked as Checked In.</p>
             </div>
           `;
@@ -324,17 +324,17 @@ function initOperationalVerifyPage() {
 
       } else if (result.status === 'DUPLICATE') {
         resultContainer.innerHTML = `
-          <div style="background: rgba(18, 22, 27, 0.95); border: 2px solid #f59e0b; border-radius: 1.5rem; padding: 2rem; text-align: center; box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);">
-            <div style="color: #f59e0b; font-size: 2rem; font-family: var(--font-royal); margin-bottom: 0.3rem;">⚠ ALREADY CHECKED IN</div>
-            <div style="font-family: var(--font-accent); color: #fbbf24; letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem;">DUPLICATE PASS ENTRY</div>
+          <div style="background: rgba(23, 14, 22, 0.95); border: 2px solid var(--yellow-warm); border-radius: 1.5rem; padding: 2rem; text-align: center; box-shadow: var(--glow-yellow);">
+            <div style="color: var(--yellow-warm); font-size: 2rem; font-family: var(--font-royal); margin-bottom: 0.3rem;">⚠ ALREADY CHECKED IN</div>
+            <div style="font-family: var(--font-accent); color: var(--yellow-light); letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem;">DUPLICATE PASS ENTRY</div>
             <p style="color: var(--text-secondary); font-size: 0.95rem;">${result.message}</p>
           </div>
         `;
       } else {
         resultContainer.innerHTML = `
-          <div style="background: rgba(18, 22, 27, 0.95); border: 2px solid #ef4444; border-radius: 1.5rem; padding: 2rem; text-align: center; box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);">
-            <div style="color: #ef4444; font-size: 2rem; font-family: var(--font-royal); margin-bottom: 0.3rem;">✕ INVALID PASS</div>
-            <div style="font-family: var(--font-accent); color: #f87171; letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem;">ACCESS DENIED</div>
+          <div style="background: rgba(23, 14, 22, 0.95); border: 2px solid var(--plum-bright); border-radius: 1.5rem; padding: 2rem; text-align: center; box-shadow: var(--glow-plum);">
+            <div style="color: var(--plum-bright); font-size: 2rem; font-family: var(--font-royal); margin-bottom: 0.3rem;">✕ INVALID PASS</div>
+            <div style="font-family: var(--font-accent); color: var(--plum-light); letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem;">ACCESS DENIED</div>
             <p style="color: var(--text-secondary); font-size: 0.95rem;">${result.message}</p>
           </div>
         `;

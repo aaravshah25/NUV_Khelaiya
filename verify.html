@@ -19,14 +19,14 @@
 
   <style>
     body {
-      background-color: #060708;
+      background-color: var(--bg-primary);
       color: #fcfbf7;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
     .operational-header {
-      background: rgba(14, 17, 22, 0.95);
+      background: rgba(15, 10, 14, 0.95);
       border-bottom: 1px solid var(--border-gold-subtle);
       padding: 1.2rem var(--section-pad-x);
       display: flex;
@@ -41,9 +41,9 @@
       gap: 0.6rem;
       padding: 0.4rem 1rem;
       border-radius: 9999px;
-      background: rgba(62, 201, 167, 0.1);
-      border: 1px solid var(--border-emerald);
-      color: var(--emerald-bright);
+      background: rgba(15, 77, 91, 0.25);
+      border: 1px solid var(--border-teal);
+      color: var(--teal-bright);
       font-family: var(--font-accent);
       font-size: 0.75rem;
       font-weight: 700;
@@ -54,8 +54,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--emerald-bright);
-      box-shadow: 0 0 8px var(--emerald-bright);
+      background: var(--teal-bright);
+      box-shadow: 0 0 8px var(--teal-bright);
       animation: blinkLive 1.5s infinite;
     }
     .stats-bar-grid {
@@ -75,7 +75,7 @@
       font-family: var(--font-display);
       font-size: 2rem;
       font-weight: 800;
-      color: var(--gold-warm);
+      color: var(--yellow-warm);
     }
     .stat-mini-label {
       font-family: var(--font-accent);
@@ -90,6 +90,9 @@
 
   <!-- Film Grain Overlay -->
   <div class="grain-overlay"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
 
   <!-- Operational Header Bar -->
   <header class="operational-header">
@@ -98,7 +101,7 @@
         <div class="nav-brand-seal" style="width: 32px; height: 32px; font-size: 0.75rem;">NK</div>
         <div>
           <h1 style="font-family: var(--font-display); font-size: 1.1rem; line-height: 1;">NUV KHELAIYA</h1>
-          <span style="font-family: var(--font-accent); font-size: 0.6rem; color: var(--gold-champagne); letter-spacing: 0.15em; text-transform: uppercase;">PASS VERIFICATION SYSTEM</span>
+          <span style="font-family: var(--font-accent); font-size: 0.6rem; color: var(--yellow-warm); letter-spacing: 0.15em; text-transform: uppercase;">PASS VERIFICATION SYSTEM</span>
         </div>
       </a>
     </div>
@@ -109,7 +112,7 @@
         <span id="cached-count-badge">14 CHECK-INS CACHED</span>
       </div>
 
-      <button id="btn-sync-cloud" class="btn-luxury-outline" style="padding: 0.4rem 1.2rem; font-size: 0.75rem;">
+      <button id="btn-sync-cloud" class="btn-luxury-outline" style="padding: 0.4rem 1.2rem; font-size: 0.75rem; border-color: var(--border-teal); color: var(--teal-bright);">
         SYNC DATA
       </button>
 
@@ -120,7 +123,7 @@
   </header>
 
   <!-- Sync Toast Notification -->
-  <div id="sync-toast" style="position: fixed; top: 80px; right: 20px; background: var(--emerald-bright); color: var(--emerald-deep); padding: 0.8rem 1.5rem; border-radius: 9999px; font-family: var(--font-accent); font-weight: 700; font-size: 0.85rem; box-shadow: var(--glow-emerald); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+  <div id="sync-toast" style="position: fixed; top: 80px; right: 20px; background: var(--teal-bright); color: var(--teal-deep); padding: 0.8rem 1.5rem; border-radius: 9999px; font-family: var(--font-accent); font-weight: 700; font-size: 0.85rem; box-shadow: var(--glow-teal); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
     ✓ ALL GATE DATA SYNCED WITH CENTRAL DATABASE
   </div>
 
@@ -134,11 +137,11 @@
         <div class="stat-mini-label">TOTAL PASSES</div>
       </div>
       <div class="stat-mini-card">
-        <div class="stat-mini-num" id="stat-checked-in" style="color: var(--emerald-bright);">1</div>
+        <div class="stat-mini-num" id="stat-checked-in" style="color: var(--teal-bright);">1</div>
         <div class="stat-mini-label">CHECKED IN</div>
       </div>
       <div class="stat-mini-card">
-        <div class="stat-mini-num" id="stat-remaining" style="color: var(--gold-champagne);">7</div>
+        <div class="stat-mini-num" id="stat-remaining" style="color: var(--yellow-warm);">7</div>
         <div class="stat-mini-label">REMAINING</div>
       </div>
     </div>

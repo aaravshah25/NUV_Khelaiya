@@ -263,7 +263,7 @@ function initSponsorSpotlights() {
       const rect = box.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      box.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(223, 203, 159, 0.18) 0%, rgba(18, 22, 27, 0.8) 70%)`;
+      box.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(254, 191, 74, 0.2) 0%, rgba(32, 14, 28, 0.85) 70%)`;
     });
 
     box.addEventListener('mouseleave', () => {
